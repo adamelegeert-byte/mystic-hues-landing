@@ -26,7 +26,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body"
         >
-          Content Creation & Strategy Agency
+          Dream It, Design It, Do It
         </motion.p>
 
         <motion.h1
