@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
+import companyName from "@/assets/company-name.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -15,8 +17,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-2xl font-bold tracking-tight text-foreground">
-          CRÉA<span className="text-gradient-purple">TIVE</span>
+        <a href="#" className="flex items-center gap-3">
+          <img src={logo} alt="Company logo" className="h-9 w-auto" />
+          <img src={companyName} alt="Company name" className="h-5 w-auto" />
         </a>
 
         {/* Desktop */}
