@@ -116,3 +116,13 @@
     border: 1px solid hsl(40 8% 18% / 0.5);
   }
 }
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
