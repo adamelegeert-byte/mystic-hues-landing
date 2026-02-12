@@ -16,8 +16,8 @@ const TrustedBySection = () => {
 
   return (
     <section className="relative py-16 bg-card/80 border-y border-border/30 overflow-hidden">
-      <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground font-body mb-10">
-        They Trusted Us
+      <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground font-body mb-12">
+        They Trust Us
       </p>
 
       {/* Fade edges */}
@@ -26,13 +26,13 @@ const TrustedBySection = () => {
 
       {/* Scrolling track */}
       <div className="group flex items-center">
-        <div className="flex items-center gap-16 md:gap-24 animate-scroll-left group-hover:[animation-play-state:paused]">
+        <div className="flex items-center gap-20 md:gap-32 animate-scroll-left group-hover:[animation-play-state:paused]">
           {allLogos.map((logo, i) => (
             <img
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-12 md:h-16 w-auto object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="h-20 md:h-28 w-auto object-contain shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
             />
           ))}
         </div>
