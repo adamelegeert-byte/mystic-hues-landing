@@ -175,6 +175,37 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "men-at-work",
+    client: "Men at Work",
+    title: "Branding & Identité Visuelle",
+    category: "Branding",
+    tags: ["Logo Design", "Identité visuelle", "Typographie", "Charte graphique"],
+    shortDescription:
+      "Création de l'identité visuelle complète pour Men at Work : logo, palettes de couleurs, typographie et déclinaisons.",
+    fullDescription:
+      "Conception de l'identité visuelle complète pour Men at Work : création du logotype avec un concept de silhouette humaine stylisée intégré aux lettres « m » et « n ». Développement de multiples palettes de couleurs gradient (cyan-bleu, corail-brun, turquoise, lavande), déclinaisons du logo sur fonds colorés et sombres, sélection typographique (Smooth Circulars pour les titres, Lato pour le corps), et mise en application sur cartes de visite et supports digitaux.",
+    coverImage: portfolio3,
+    gradient: "from-cyan-500 to-blue-600",
+    year: "2024",
+    deliverables: [
+      "Conception du logotype — concept silhouette",
+      "Palettes de couleurs gradient (4 déclinaisons)",
+      "Déclinaisons logo multi-fonds",
+      "Sélection typographique (Smooth Circulars + Lato)",
+      "Cartes de visite recto/verso",
+      "Charte graphique documentée",
+    ],
+    media: [
+      { type: "image", src: "/portfolio/men-at-work/cover.jpg", alt: "Men at Work — logo support visuel" },
+      { type: "image", src: "/portfolio/men-at-work/logo-versions.jpg", alt: "Men at Work — versions du logo" },
+      { type: "image", src: "/portfolio/men-at-work/branded-block.jpg", alt: "Men at Work — branded block" },
+      { type: "image", src: "/portfolio/men-at-work/logotype.jpg", alt: "Men at Work — logotype dérivé" },
+      { type: "image", src: "/portfolio/men-at-work/typography.jpg", alt: "Men at Work — typographie" },
+      { type: "image", src: "/portfolio/men-at-work/logo-palette.jpg", alt: "Men at Work — palette logo" },
+      { type: "image", src: "/portfolio/men-at-work/gradient-palette.jpg", alt: "Men at Work — gradient palette" },
+    ],
+  },
+  {
     slug: "wilmeyer",
     client: "Wilmeyer",
     title: "Couverture Événementielle Complète",
