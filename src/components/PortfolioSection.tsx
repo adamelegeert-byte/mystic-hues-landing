@@ -1,5 +1,5 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Play } from "lucide-react";
@@ -9,6 +9,7 @@ const PortfolioSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeFilter, setActiveFilter] = useState("Tous");
+  const [videoIndex, setVideoIndex] = useState<Record<string, number>>({});
   const navigate = useNavigate();
 
   const filtered =
@@ -32,12 +33,19 @@ const PortfolioSection = () => {
     );
   };
 
+  // Get all landscape videos for a project
+  const getAllLandscapeVideos = (slug: string) => {
+    const project = projects.find((p) => p.slug === slug);
+    return (
+      project?.media.filter(
+        (m) => m.type === "video" && m.aspect === "landscape"
+      ) ?? []
+    );
+  };
+
   // Get first landscape video, then fallback to any video
   const getFirstLandscapeVideo = (slug: string) => {
-    const project = projects.find((p) => p.slug === slug);
-    return project?.media.find(
-      (m) => m.type === "video" && m.aspect === "landscape"
-    );
+    return getAllLandscapeVideos(slug)[0];
   };
 
   const getFirstVideo = (slug: string) => {
@@ -92,10 +100,12 @@ const PortfolioSection = () => {
         >
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => {
-              const landscapeVid = getFirstLandscapeVideo(project.slug);
+              const landscapeVids = getAllLandscapeVideos(project.slug);
               const portraitVid = getFirstPortraitVideo(project.slug);
               const anyVid = getFirstVideo(project.slug);
               const showVideo = !!anyVid;
+              const currentIdx = videoIndex[project.slug] ?? 0;
+              const currentLandscape = landscapeVids[currentIdx % landscapeVids.length];
 
               return (
                 <motion.div
@@ -110,13 +120,23 @@ const PortfolioSection = () => {
                 >
                   {/* Thumbnail */}
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    {showVideo && landscapeVid ? (
+                    {showVideo && currentLandscape ? (
                       <video
-                        src={landscapeVid.src}
+                        key={currentLandscape.src}
+                        src={currentLandscape.src}
                         muted
-                        loop
                         playsInline
                         autoPlay
+                        onEnded={(e) => {
+                          if (landscapeVids.length > 1) {
+                            setVideoIndex((prev) => ({
+                              ...prev,
+                              [project.slug]: (currentIdx + 1) % landscapeVids.length,
+                            }));
+                          } else {
+                            (e.target as HTMLVideoElement).play();
+                          }
+                        }}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                     ) : showVideo && portraitVid ? (
