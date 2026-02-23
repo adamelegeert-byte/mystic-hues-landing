@@ -4,7 +4,17 @@ import { Badge } from "@/components/ui/badge";
 
 const categories = ["Tous", "Stratégie", "Branding", "Vidéo", "Événementiel"];
 
-const projects = [
+interface Project {
+  client: string;
+  title: string;
+  category: string;
+  tags: string[];
+  description: string;
+  gradient: string;
+  videos?: string[];
+}
+
+const projects: Project[] = [
   {
     client: "Revival Business",
     title: "Stratégie de Communication 360°",
@@ -44,6 +54,7 @@ const projects = [
     tags: ["Production vidéo", "Contenu de marque"],
     description: "Création de contenus vidéo pour Vregas : production et montage de vidéos promotionnelles mettant en valeur l'univers de la marque.",
     gradient: "from-purple-600 to-pink-500",
+    videos: ["/videos/vregas/VREGAS.mp4", "/videos/vregas/Vregas_20.09_1.mp4"],
   },
   {
     client: "Wilmeyer",
@@ -117,16 +128,31 @@ const PortfolioSection = () => {
                 transition={{ duration: 0.35 }}
                 className="group relative rounded-xl overflow-hidden cursor-pointer bg-card border border-border/30"
               >
-                {/* Placeholder image */}
-                <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.gradient} flex items-center justify-center transition-transform duration-500 group-hover:scale-105`}>
-                  <span className="text-2xl md:text-3xl font-display font-bold text-white/90 text-center px-6 drop-shadow-lg">
-                    {project.client}
-                  </span>
-                  {/* Category badge */}
-                  <Badge className="absolute top-4 left-4 bg-background/70 text-foreground backdrop-blur-sm border-none text-xs">
-                    {project.category}
-                  </Badge>
-                </div>
+                {/* Placeholder image or video */}
+                {'videos' in project && project.videos ? (
+                  <div className="relative aspect-[16/10] bg-background transition-transform duration-500 group-hover:scale-105">
+                    <video
+                      src={project.videos[0]}
+                      muted
+                      loop
+                      playsInline
+                      autoPlay
+                      className="w-full h-full object-cover"
+                    />
+                    <Badge className="absolute top-4 left-4 bg-background/70 text-foreground backdrop-blur-sm border-none text-xs z-10">
+                      {project.category}
+                    </Badge>
+                  </div>
+                ) : (
+                  <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.gradient} flex items-center justify-center transition-transform duration-500 group-hover:scale-105`}>
+                    <span className="text-2xl md:text-3xl font-display font-bold text-white/90 text-center px-6 drop-shadow-lg">
+                      {project.client}
+                    </span>
+                    <Badge className="absolute top-4 left-4 bg-background/70 text-foreground backdrop-blur-sm border-none text-xs">
+                      {project.category}
+                    </Badge>
+                  </div>
+                )}
 
                 {/* Hover overlay with description */}
                 <div className="absolute inset-0 bg-background/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center p-6">
