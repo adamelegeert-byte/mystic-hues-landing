@@ -91,6 +91,7 @@ export const projects: Project[] = [
       "Direction artistique des supports digitaux",
     ],
     media: [
+      { type: "video", src: "/portfolio/guidelance/cover-video.mov", aspect: "landscape" },
       { type: "image", src: "/portfolio/guidelance/cover.png", alt: "SKISS x Guidelance — announcement" },
       { type: "image", src: "/portfolio/guidelance/social-1.jpeg", alt: "Guidelance — Instagram post" },
       { type: "image", src: "/portfolio/guidelance/social-2.jpeg", alt: "Guidelance — Instagram post dark" },
