@@ -184,7 +184,7 @@ export const projects: Project[] = [
       "Création de l'identité visuelle complète pour Men at Work : logo, palettes de couleurs, typographie et déclinaisons.",
     fullDescription:
       "Conception de l'identité visuelle complète pour Men at Work : création du logotype avec un concept de silhouette humaine stylisée intégré aux lettres « m » et « n ». Développement de multiples palettes de couleurs gradient (cyan-bleu, corail-brun, turquoise, lavande), déclinaisons du logo sur fonds colorés et sombres, sélection typographique (Smooth Circulars pour les titres, Lato pour le corps), et mise en application sur cartes de visite et supports digitaux.",
-    coverImage: portfolio3,
+    coverImage: "/portfolio/men-at-work/cover.jpg",
     gradient: "from-cyan-500 to-blue-600",
     year: "2024",
     deliverables: [
