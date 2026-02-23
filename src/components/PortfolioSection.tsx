@@ -63,6 +63,7 @@ const projects: Project[] = [
     tags: ["Photographie", "Vidéo", "Événementiel", "After Movie"],
     description: "Couverture complète du Tournoi de Paddel Wilmeyer : reportage photographique professionnel (97 photos), production de l'After Movie, création d'un Reel Halloween, et montage de clips musicaux. Un accompagnement 360° de l'image événementielle du client.",
     gradient: "from-emerald-500 to-teal-400",
+    videos: ["/videos/wilmeyer/Halloween_Wilmeyer_Reel.mp4"],
   },
 ];
 
