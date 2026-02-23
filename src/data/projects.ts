@@ -193,6 +193,7 @@ export const projects: Project[] = [
       "Clips musicaux — montage",
     ],
     media: [
+      { type: "video", src: "/portfolio/wilmeyer/wilmeyer-cover.mp4", aspect: "landscape" },
       { type: "video", src: "/portfolio/wilmeyer/halloween-reel.mp4", aspect: "portrait" },
       { type: "image", src: "/portfolio/wilmeyer/photos/photo-001.jpg", alt: "Tournoi de Paddel — 1" },
       { type: "image", src: "/portfolio/wilmeyer/photos/photo-003.jpg", alt: "Tournoi de Paddel — 2" },

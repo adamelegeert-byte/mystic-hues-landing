@@ -32,7 +32,14 @@ const PortfolioSection = () => {
     );
   };
 
-  // Get first landscape video for a project
+  // Get first landscape video, then fallback to any video
+  const getFirstLandscapeVideo = (slug: string) => {
+    const project = projects.find((p) => p.slug === slug);
+    return project?.media.find(
+      (m) => m.type === "video" && m.aspect === "landscape"
+    );
+  };
+
   const getFirstVideo = (slug: string) => {
     const project = projects.find((p) => p.slug === slug);
     return project?.media.find((m) => m.type === "video");
@@ -85,6 +92,7 @@ const PortfolioSection = () => {
         >
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => {
+              const landscapeVid = getFirstLandscapeVideo(project.slug);
               const portraitVid = getFirstPortraitVideo(project.slug);
               const anyVid = getFirstVideo(project.slug);
               const showVideo = !!anyVid;
@@ -102,8 +110,16 @@ const PortfolioSection = () => {
                 >
                   {/* Thumbnail */}
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    {showVideo && portraitVid ? (
-                      /* Portrait video thumbnail — shown in 9:16 centered in container */
+                    {showVideo && landscapeVid ? (
+                      <video
+                        src={landscapeVid.src}
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    ) : showVideo && portraitVid ? (
                       <div className="w-full h-full bg-black/40 flex items-center justify-center">
                         <video
                           src={portraitVid.src}
