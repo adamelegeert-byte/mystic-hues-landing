@@ -175,6 +175,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "cite-des-nuages",
+    client: "La Cité des Nuages",
+    title: "Mini-Vidéos & Direction Artistique RS",
+    category: "Vidéo",
+    tags: ["Production vidéo", "Réseaux sociaux", "Direction artistique", "Montage"],
+    shortDescription:
+      "Création de mini-vidéos dynamiques pour La Cité des Nuages, boutique de produits dérivés cinéma & animation à Waterloo.",
+    fullDescription:
+      "Création de mini-vidéos pour le compte de La Cité des Nuages, un magasin de produits dérivés liés au cinéma et aux séries d'animation, situé à Waterloo. L'objectif était de développer une véritable direction artistique sur les réseaux sociaux à travers des mini-montages dynamiques, mettant en valeur les produits phares de la boutique avec un univers visuel fort et immersif.",
+    coverImage: "/portfolio/cite-des-nuages/cover.jpeg",
+    gradient: "from-indigo-600 to-violet-500",
+    year: "2024",
+    deliverables: [
+      "Création de 9+ mini-vidéos dynamiques",
+      "Direction artistique réseaux sociaux",
+      "Montage et post-production",
+      "Mise en valeur produits dérivés cinéma & animation",
+    ],
+    media: [
+      { type: "image", src: "/portfolio/cite-des-nuages/cover.jpeg", alt: "La Cité des Nuages — Ahsoka" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-1.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-2.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-3.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-4.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-5.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-6.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-7.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-8.mp4", aspect: "portrait" },
+      { type: "video", src: "/portfolio/cite-des-nuages/video-9.mp4", aspect: "portrait" },
+    ],
+  },
+  {
     slug: "men-at-work",
     client: "Men at Work",
     title: "Branding & Identité Visuelle",
