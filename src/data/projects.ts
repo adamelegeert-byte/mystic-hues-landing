@@ -114,7 +114,7 @@ export const projects: Project[] = [
       "Création de l'identité visuelle complète pour WIP, de la conception du logo à la signalétique.",
     fullDescription:
       "Création de l'identité visuelle complète pour WIP (Working In Progress) : design du logo avec concept handshake intégré symbolisant le partenariat et la collaboration. Déclinaisons couleur multiples (gradient coral-brun & vert-cyan), cartes de visite pour Jacques Allaert (CEO), papeterie corporate, enseigne lumineuse extérieure, et bannières digitales pour le secteur sécurité et technologie. Un travail de branding complet du concept initial jusqu'aux applications concrètes.",
-    coverImage: portfolio3,
+    coverImage: "/portfolio/wip/cover.jpeg",
     gradient: "from-gray-800 to-gray-600",
     year: "2024",
     deliverables: [
