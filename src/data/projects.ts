@@ -194,6 +194,7 @@ export const projects: Project[] = [
       "Mise en valeur produits dérivés cinéma & animation",
     ],
     media: [
+      { type: "video", src: "/portfolio/cite-des-nuages/generique.mov", aspect: "landscape" },
       { type: "image", src: "/portfolio/cite-des-nuages/cover.jpeg", alt: "La Cité des Nuages — Ahsoka" },
       { type: "video", src: "/portfolio/cite-des-nuages/video-1.mp4", aspect: "portrait" },
       { type: "video", src: "/portfolio/cite-des-nuages/video-2.mp4", aspect: "portrait" },
