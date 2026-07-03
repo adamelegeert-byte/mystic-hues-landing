@@ -1,25 +1,30 @@
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
+    <section className="relative h-screen min-h-screen flex items-end justify-center overflow-hidden">
+      {/* Background video */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Creative abstract background"
+        <video
+          src={heroVideo.url}
           className="w-full h-full object-cover"
-          loading="eager"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-background/60" />
+        {/* Subtle dark gradient overlay at the bottom for text readability */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent" />
       </div>
 
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full gradient-purple opacity-20 blur-[100px]" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full gradient-coral opacity-15 blur-[100px]" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-6 text-center pb-20 md:pb-28">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
