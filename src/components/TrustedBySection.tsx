@@ -2,12 +2,14 @@ import clientWilmeyer from "@/assets/client-wilmeyer.png";
 import clientWip from "@/assets/client-wip.png";
 import clientFa from "@/assets/client-fa.png";
 import clientThefin from "@/assets/client-thefin.png";
+import clientDieteren from "@/assets/client-d-ieteren.png";
 
 const logos = [
   { src: clientWilmeyer, alt: "Wilmeyer" },
   { src: clientWip, alt: "WIP For You" },
   { src: clientFa, alt: "FA" },
   { src: clientThefin, alt: "The Fin" },
+  { src: clientDieteren, alt: "D'Ieteren" },
 ];
 
 const TrustedBySection = () => {
