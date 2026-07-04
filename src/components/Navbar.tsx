@@ -35,14 +35,14 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-body tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-sm font-body font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="gradient-purple px-5 py-2.5 rounded-full text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+            className="gradient-purple px-5 py-2.5 rounded-full text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
           >
             Get Started
           </a>
@@ -72,7 +72,7 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-body text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-lg font-body font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </a>
@@ -80,7 +80,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="gradient-purple px-5 py-3 rounded-full text-center text-sm font-medium text-accent-foreground mt-2"
+                className="gradient-purple px-5 py-3 rounded-full text-center text-sm font-semibold text-accent-foreground mt-2"
               >
                 Get Started
               </a>

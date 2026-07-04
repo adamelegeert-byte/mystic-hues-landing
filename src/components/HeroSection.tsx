@@ -29,7 +29,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body"
+          className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body font-light"
         >
           Dream It, Design It, Do It
         </motion.p>
@@ -38,7 +38,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-8"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] mb-8"
         >
           We Craft Stories
           <br />
@@ -49,7 +49,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body font-normal"
         >
           We blend creative vision with commercial strategy to build brands that
           stand out and drive measurable results.
@@ -63,13 +63,13 @@ const HeroSection = () => {
         >
           <a
             href="#contact"
-            className="gradient-purple px-8 py-4 rounded-full text-accent-foreground font-medium hover:opacity-90 transition-opacity glow-purple"
+            className="gradient-purple px-8 py-4 rounded-full text-accent-foreground font-semibold hover:opacity-90 transition-opacity glow-purple"
           >
             Start Your Project
           </a>
           <a
             href="#portfolio"
-            className="px-8 py-4 rounded-full border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+            className="px-8 py-4 rounded-full border border-border text-foreground font-semibold hover:bg-secondary transition-colors"
           >
             View Our Work
           </a>
