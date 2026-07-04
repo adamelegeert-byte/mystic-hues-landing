@@ -1,4 +1,14 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
+
 const Footer = () => {
+  const { lang } = useLanguage();
+  const links = [
+    { label: ui.footer.services[lang], href: "#services" },
+    { label: ui.footer.portfolio[lang], href: "#portfolio" },
+    { label: ui.footer.testimonials[lang], href: "#testimonials" },
+    { label: ui.footer.contact[lang], href: "#contact" },
+  ];
   return (
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-6">
@@ -8,19 +18,19 @@ const Footer = () => {
           </a>
 
           <div className="flex items-center gap-8">
-            {["Services", "Portfolio", "Testimonials", "Contact"].map((link) => (
+            {links.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.href}
+                href={link.href}
                 className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </div>
 
           <p className="text-sm text-muted-foreground font-body">
-            © 2025 Créative. All rights reserved.
+            {ui.footer.rights[lang]}
           </p>
         </div>
       </div>

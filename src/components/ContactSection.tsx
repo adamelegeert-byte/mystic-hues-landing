@@ -2,10 +2,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { lang } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,7 +17,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you shortly.");
+    toast.success(ui.contact.toast[lang]);
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -30,13 +33,13 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 font-body">
-            Let's Talk
+            {ui.contact.eyebrow[lang]}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Start Your Project
+            {ui.contact.title[lang]}
           </h2>
           <p className="text-muted-foreground font-body text-lg">
-            Tell us about your vision. We'd love to hear from you.
+            {ui.contact.description[lang]}
           </p>
         </motion.div>
 
@@ -50,7 +53,7 @@ const ContactSection = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-body text-muted-foreground mb-2">
-                Name
+                {ui.contact.nameLabel[lang]}
               </label>
               <input
                 type="text"
@@ -58,12 +61,12 @@ const ContactSection = () => {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-card border border-border rounded-xl px-5 py-3.5 font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
-                placeholder="Your name"
+                placeholder={ui.contact.namePlaceholder[lang]}
               />
             </div>
             <div>
               <label className="block text-sm font-body text-muted-foreground mb-2">
-                Email
+                {ui.contact.emailLabel[lang]}
               </label>
               <input
                 type="email"
@@ -71,13 +74,13 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-card border border-border rounded-xl px-5 py-3.5 font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
-                placeholder="your@email.com"
+                placeholder={ui.contact.emailPlaceholder[lang]}
               />
             </div>
           </div>
           <div>
             <label className="block text-sm font-body text-muted-foreground mb-2">
-              Message
+              {ui.contact.messageLabel[lang]}
             </label>
             <textarea
               required
@@ -85,7 +88,7 @@ const ContactSection = () => {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full bg-card border border-border rounded-xl px-5 py-3.5 font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors resize-none"
-              placeholder="Tell us about your project..."
+              placeholder={ui.contact.messagePlaceholder[lang]}
             />
           </div>
           <div className="text-center">
@@ -93,7 +96,7 @@ const ContactSection = () => {
               type="submit"
               className="gradient-purple px-10 py-4 rounded-full text-accent-foreground font-medium hover:opacity-90 transition-opacity glow-purple inline-flex items-center gap-2"
             >
-              Send Message
+              {ui.contact.submit[lang]}
               <Send className="w-4 h-4" />
             </button>
           </div>

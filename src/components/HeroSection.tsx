@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 const HeroSection = () => {
+  const { lang } = useLanguage();
   return (
     <section className="relative h-screen min-h-screen flex items-end justify-center overflow-hidden">
       {/* Background video */}
@@ -31,7 +34,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-sm md:text-base uppercase tracking-[0.3em] text-white mb-6 font-body font-light"
         >
-          Dream It, Design It, Do It
+          {ui.hero.eyebrow[lang]}
         </motion.p>
 
         <motion.h1
@@ -40,9 +43,12 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] mb-8"
         >
-          We Craft Stories
+          {ui.hero.headlineStart[lang]}
           <br />
-          That <span className="text-gradient-warm italic">Convert</span>
+          {ui.hero.headlineMid[lang]}
+          <span className="text-gradient-warm italic">
+            {ui.hero.headlineAccent[lang]}
+          </span>
         </motion.h1>
 
         <motion.p
@@ -51,8 +57,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 font-body font-normal"
         >
-          We blend creative vision with commercial strategy to build brands that
-          stand out and drive measurable results.
+          {ui.hero.description[lang]}
         </motion.p>
 
         <motion.div
@@ -65,13 +70,13 @@ const HeroSection = () => {
             href="#contact"
             className="gradient-warm px-8 py-4 rounded-full text-white font-semibold hover:opacity-90 transition-opacity"
           >
-            Start Your Project
+            {ui.hero.ctaPrimary[lang]}
           </a>
           <a
             href="#portfolio"
             className="px-8 py-4 rounded-full border border-border text-foreground font-semibold hover:bg-secondary transition-colors"
           >
-            View Our Work
+            {ui.hero.ctaSecondary[lang]}
           </a>
         </motion.div>
       </div>

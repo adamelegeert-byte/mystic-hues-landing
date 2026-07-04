@@ -3,7 +3,9 @@ import { useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Play } from "lucide-react";
-import { projects, categories } from "@/data/projects";
+import { projects, categories, localizeProject } from "@/data/projects";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 const PortfolioSection = () => {
   const ref = useRef(null);
@@ -11,11 +13,14 @@ const PortfolioSection = () => {
   const [activeFilter, setActiveFilter] = useState("Tous");
   const [videoIndex, setVideoIndex] = useState<Record<string, number>>({});
   const navigate = useNavigate();
+  const { lang } = useLanguage();
+
+  const localized = projects.map((p) => localizeProject(p, lang));
 
   const filtered =
     activeFilter === "Tous"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      ? localized
+      : localized.filter((p) => p.category === activeFilter);
 
   // Check if a project has portrait videos (to show 9:16 thumbnail)
   const hasPortraitVideo = (slug: string) => {
@@ -64,10 +69,10 @@ const PortfolioSection = () => {
           className="text-center mb-12"
         >
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 font-body">
-            Découvrez nos projets récents
+            {ui.portfolio.eyebrow[lang]}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-            Nos Réalisations
+            {ui.portfolio.title[lang]}
           </h2>
         </motion.div>
 
@@ -88,7 +93,7 @@ const PortfolioSection = () => {
                   : "bg-secondary/60 text-secondary-foreground border-border/50 hover:bg-secondary hover:border-border"
               }`}
             >
-              {cat}
+              {ui.portfolio.categories[cat]?.[lang] ?? cat}
             </button>
           ))}
         </motion.div>
@@ -170,7 +175,7 @@ const PortfolioSection = () => {
 
                     {/* Category badge */}
                     <Badge className="absolute top-4 left-4 bg-background/70 text-foreground backdrop-blur-sm border-none text-xs z-10">
-                      {project.category}
+                      {ui.portfolio.categories[project.category]?.[lang] ?? project.category}
                     </Badge>
 
                     {/* Video indicator */}
@@ -192,7 +197,7 @@ const PortfolioSection = () => {
                         {project.shortDescription}
                       </p>
                       <div className="mt-4 flex items-center gap-2 text-accent text-xs font-body font-medium">
-                        <span>Voir le projet</span>
+                        <span>{ui.portfolio.viewProject[lang]}</span>
                         <ExternalLink className="w-3 h-3" />
                       </div>
                     </div>

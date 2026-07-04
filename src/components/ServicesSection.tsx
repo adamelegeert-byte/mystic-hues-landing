@@ -2,29 +2,22 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Sparkles, TrendingUp, Camera } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
-const services = [
+const serviceMeta = [
   {
     icon: Sparkles,
-    title: "Content Creation",
-    description:
-      "From scroll-stopping social media to cinematic brand films, we create content that captures attention and drives engagement.",
     gradient: "gradient-purple",
     glow: "glow-purple",
   },
   {
     icon: TrendingUp,
-    title: "Commercial Strategy",
-    description:
-      "Data-driven strategies that align your brand story with business objectives, turning followers into customers.",
     gradient: "gradient-warm",
     glow: "glow-coral",
   },
   {
     icon: Camera,
-    title: "Brand Identity",
-    description:
-      "Visual systems that communicate who you are at a glance — logos, typography, color palettes, and complete brand guidelines.",
     gradient: "gradient-teal",
     glow: "glow-teal",
   },
@@ -33,6 +26,12 @@ const services = [
 const ServicesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { lang } = useLanguage();
+  const services = serviceMeta.map((meta, i) => ({
+    ...meta,
+    title: ui.services.items[i].title[lang],
+    description: ui.services.items[i].description[lang],
+  }));
 
   return (
     <section id="services" className="py-24 md:py-32 relative overflow-hidden">
@@ -46,10 +45,10 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 font-body">
-            What We Do
+            {ui.services.eyebrow[lang]}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-            Our Services
+            {ui.services.title[lang]}
           </h2>
         </motion.div>
 
