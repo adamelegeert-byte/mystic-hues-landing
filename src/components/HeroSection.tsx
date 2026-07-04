@@ -29,7 +29,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-6 font-body font-light"
+          className="text-sm md:text-base uppercase tracking-[0.3em] text-white mb-6 font-body font-light"
         >
           Dream It, Design It, Do It
         </motion.p>
