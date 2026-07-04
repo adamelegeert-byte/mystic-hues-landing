@@ -63,7 +63,7 @@ const HeroSection = () => {
         >
           <a
             href="#contact"
-            className="gradient-purple px-8 py-4 rounded-full text-accent-foreground font-semibold hover:opacity-90 transition-opacity glow-purple"
+            className="gradient-warm px-8 py-4 rounded-full text-white font-semibold hover:opacity-90 transition-opacity"
           >
             Start Your Project
           </a>
