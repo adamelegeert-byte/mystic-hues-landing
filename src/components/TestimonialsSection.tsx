@@ -1,34 +1,21 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Quote } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
-const testimonials = [
-  {
-    quote:
-      "They didn't just create content — they built an entire visual universe around our brand. Sales increased 40% in three months.",
-    name: "Sophie Martin",
-    role: "CEO, Luxe Cosmetics",
-    gradient: "gradient-purple",
-  },
-  {
-    quote:
-      "The strategy was sharp, the execution flawless. Our social engagement tripled and we finally had a cohesive brand voice.",
-    name: "Antoine Duval",
-    role: "Founder, Maison Duval",
-    gradient: "gradient-warm",
-  },
-  {
-    quote:
-      "Working with this team felt like having an in-house creative department. They understood our vision from day one.",
-    name: "Clara Rodriguez",
-    role: "Marketing Director, Atelier Blanc",
-    gradient: "gradient-teal",
-  },
-];
+const gradients = ["gradient-purple", "gradient-warm", "gradient-teal"];
 
 const TestimonialsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { lang } = useLanguage();
+  const testimonials = ui.testimonials.items.map((item, i) => ({
+    quote: item.quote[lang],
+    name: item.name[lang],
+    role: item.role[lang],
+    gradient: gradients[i],
+  }));
 
   return (
     <section id="testimonials" className="py-24 md:py-32 relative overflow-hidden">
@@ -42,10 +29,10 @@ const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 font-body">
-            Client Love
+            {ui.testimonials.eyebrow[lang]}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
-            What They Say
+            {ui.testimonials.title[lang]}
           </h2>
         </motion.div>
 

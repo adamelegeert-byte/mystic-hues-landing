@@ -2,10 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { getProjectBySlug, projects } from "@/data/projects";
+import { getProjectBySlug, projects, localizeProject } from "@/data/projects";
 import type { ProjectMedia } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 /** Renders a single media item — images or videos (9:16 portrait or 16:9 landscape) */
 const MediaItem = ({ item, index }: { item: ProjectMedia; index: number }) => {
@@ -52,20 +54,22 @@ const MediaItem = ({ item, index }: { item: ProjectMedia; index: number }) => {
 
 const ProjectPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const project = getProjectBySlug(slug || "");
+  const { lang } = useLanguage();
+  const raw = getProjectBySlug(slug || "");
+  const project = raw ? localizeProject(raw, lang) : undefined;
 
   if (!project) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="font-display text-4xl font-bold mb-4">
-            Projet introuvable
+            {ui.project.notFound[lang]}
           </h1>
           <Link
             to="/#portfolio"
             className="text-accent font-body hover:underline"
           >
-            Retour au portfolio
+            {ui.project.backToPortfolio[lang]}
           </Link>
         </div>
       </div>
@@ -116,7 +120,7 @@ const ProjectPage = () => {
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-body mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              Retour au portfolio
+              {ui.project.backToPortfolio[lang]}
             </Link>
           </motion.div>
 
@@ -129,7 +133,7 @@ const ProjectPage = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <Badge className="bg-accent/90 text-accent-foreground border-none">
-                {project.category}
+                {ui.portfolio.categories[project.category]?.[lang] ?? project.category}
               </Badge>
               <Badge
                 variant="outline"
@@ -175,7 +179,7 @@ const ProjectPage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-8">
-              Livrables
+              {ui.project.deliverables[lang]}
             </h2>
             <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
               {project.deliverables.map((item, i) => (
@@ -202,7 +206,7 @@ const ProjectPage = () => {
         <section className="py-16 border-t border-border/30">
           <div className="container mx-auto px-6">
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-10">
-              Le projet en détail
+              {ui.project.inDetail[lang]}
             </h2>
 
             {/* Landscape videos — full width */}
@@ -218,7 +222,7 @@ const ProjectPage = () => {
             {portraitVideos.length > 0 && (
               <div className="mb-12">
                 <h3 className="font-display text-lg font-semibold mb-6 text-muted-foreground">
-                  Vidéos
+                  {ui.project.videos[lang]}
                 </h3>
                 <div className="flex flex-wrap gap-6 justify-start">
                   {portraitVideos.map((v, i) => (
@@ -232,7 +236,7 @@ const ProjectPage = () => {
             {images.length > 0 && (
               <div>
                 <h3 className="font-display text-lg font-semibold mb-6 text-muted-foreground">
-                  Galerie
+                  {ui.project.gallery[lang]}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {images.map((img, i) => (
@@ -256,7 +260,7 @@ const ProjectPage = () => {
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               <div>
                 <p className="text-xs font-body uppercase tracking-widest mb-0.5">
-                  Projet précédent
+                  {ui.project.previous[lang]}
                 </p>
                 <p className="font-display font-semibold">
                   {prevProject.client}
@@ -270,7 +274,7 @@ const ProjectPage = () => {
             >
               <div>
                 <p className="text-xs font-body uppercase tracking-widest mb-0.5">
-                  Projet suivant
+                  {ui.project.next[lang]}
                 </p>
                 <p className="font-display font-semibold">
                   {nextProject.client}

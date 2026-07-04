@@ -3,17 +3,32 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import companyName from "@/assets/company-name.png";
-
-const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, toggle } = useLanguage();
+
+  const navLinks = [
+    { label: ui.nav.services[lang], href: "#services" },
+    { label: ui.nav.portfolio[lang], href: "#portfolio" },
+    { label: ui.nav.testimonials[lang], href: "#testimonials" },
+    { label: ui.nav.contact[lang], href: "#contact" },
+  ];
+
+  const LangSwitch = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={toggle}
+      aria-label="Toggle language"
+      className={`text-sm font-body font-medium tracking-wide select-none ${className}`}
+    >
+      <span className={lang === "fr" ? "text-foreground" : "text-muted-foreground hover:text-foreground transition-colors"}>FR</span>
+      <span className="mx-1.5 text-muted-foreground/60">|</span>
+      <span className={lang === "en" ? "text-foreground" : "text-muted-foreground hover:text-foreground transition-colors"}>EN</span>
+    </button>
+  );
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -44,8 +59,9 @@ const Navbar = () => {
             href="#contact"
             className="gradient-purple px-5 py-2.5 rounded-full text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
           >
-            Get Started
+            {ui.nav.cta[lang]}
           </a>
+          <LangSwitch />
         </div>
 
         {/* Mobile toggle */}
@@ -82,8 +98,11 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="gradient-purple px-5 py-3 rounded-full text-center text-sm font-semibold text-accent-foreground mt-2"
               >
-                Get Started
+                {ui.nav.cta[lang]}
               </a>
+              <div className="pt-2 flex justify-center">
+                <LangSwitch />
+              </div>
             </div>
           </motion.div>
         )}

@@ -3,6 +3,8 @@ import clientWip from "@/assets/client-wip.png";
 import clientFa from "@/assets/client-fa.png";
 import clientThefin from "@/assets/client-thefin.png";
 import clientDieteren from "@/assets/client-d-ieteren.png";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { ui } from "@/i18n/translations";
 
 const logos = [
   { src: clientWilmeyer, alt: "Wilmeyer" },
@@ -13,13 +15,14 @@ const logos = [
 ];
 
 const TrustedBySection = () => {
+  const { lang } = useLanguage();
   // Double the logos for seamless infinite scroll
   const allLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
     <section className="relative py-16 bg-card/80 border-y border-border/30 overflow-hidden">
       <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground font-body mb-12">
-        They Trust Us
+        {ui.trusted.label[lang]}
       </p>
 
       {/* Fade edges */}
