@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
+import martinProfile from "@/assets/martin-profile.jpg.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
 const founderMeta = [
-  { key: "Martin", gradient: "gradient-purple", glow: "glow-purple" },
+  { key: "Martin", gradient: "gradient-purple", glow: "glow-purple", image: martinProfile.url },
   { key: "Adam", gradient: "gradient-warm", glow: "glow-coral" },
   { key: "Khan", gradient: "gradient-teal", glow: "glow-teal" },
 ];
@@ -66,11 +67,19 @@ const Nous = () => {
                 className="group relative bg-card rounded-2xl p-8 md:p-10 border border-border hover:border-accent/30 transition-all duration-500"
               >
                 <div
-                  className={`w-24 h-24 rounded-full ${founder.gradient} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}
+                  className={`w-24 h-24 rounded-full ${founder.gradient} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 overflow-hidden`}
                 >
-                  <span className="font-display text-3xl font-extrabold text-accent-foreground">
-                    {founder.key.charAt(0)}
-                  </span>
+                  {founder.image ? (
+                    <img
+                      src={founder.image}
+                      alt={founder.key}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="font-display text-3xl font-extrabold text-accent-foreground">
+                      {founder.key.charAt(0)}
+                    </span>
+                  )}
                 </div>
 
                 <h2 className="font-display text-2xl font-bold mb-2">{founder.key}</h2>
