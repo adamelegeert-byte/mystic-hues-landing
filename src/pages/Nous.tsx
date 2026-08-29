@@ -3,13 +3,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import martinProfile from "@/assets/martin-profile.jpg.asset.json";
+import adamProfile from "@/assets/adam-profile.png";
+import kahnProfile from "@/assets/kahn-profile.jpeg";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
 const founderMeta = [
   { key: "Martin", gradient: "gradient-purple", glow: "glow-purple", image: martinProfile.url },
-  { key: "Adam", gradient: "gradient-warm", glow: "glow-coral" },
-  { key: "Khan", gradient: "gradient-teal", glow: "glow-teal" },
+  { key: "Adam", gradient: "gradient-warm", glow: "glow-coral", image: adamProfile },
+  { key: "Kahn", gradient: "gradient-teal", glow: "glow-teal", image: kahnProfile },
 ];
 
 const Nous = () => {
