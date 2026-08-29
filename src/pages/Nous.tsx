@@ -18,46 +18,44 @@ const Nous = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <main className="pt-32 pb-24 md:pt-40 md:pb-32 relative overflow-hidden">
+      <section className="relative h-screen min-h-screen flex items-end justify-center overflow-hidden bg-background">
+        {/* Background video */}
+        <div className="absolute inset-0">
+          <video
+            src={heroVideo.url}
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent" />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="relative z-10 container mx-auto px-6 text-center pb-20 md:pb-28"
+        >
+          <p className="text-sm uppercase tracking-[0.3em] text-white mb-4 font-body font-light">
+            {ui.about.eyebrow[lang]}
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold">
+            {ui.about.title[lang]}
+          </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-white/80 font-body leading-relaxed">
+            {ui.about.description[lang]}
+          </p>
+        </motion.div>
+      </section>
+
+      <main className="pt-24 pb-24 md:pt-32 md:pb-32 relative overflow-hidden">
         <div className="absolute top-10 left-0 w-80 h-80 rounded-full gradient-warm opacity-10 blur-[120px]" />
 
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-16"
-          >
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4 font-body font-light">
-              {ui.about.eyebrow[lang]}
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold">
-              {ui.about.title[lang]}
-            </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-muted-foreground font-body leading-relaxed">
-              {ui.about.description[lang]}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative rounded-2xl overflow-hidden border border-border mb-16"
-          >
-            <video
-              src={heroVideo.url}
-              className="w-full h-auto max-h-[560px] object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              aria-hidden="true"
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
-          </motion.div>
-
           <div className="grid md:grid-cols-3 gap-6">
             {founderMeta.map((founder, index) => (
               <motion.article
