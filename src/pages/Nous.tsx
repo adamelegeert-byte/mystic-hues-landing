@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
@@ -36,6 +37,25 @@ const Nous = () => {
             <p className="mt-6 max-w-2xl mx-auto text-muted-foreground font-body leading-relaxed">
               {ui.about.description[lang]}
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="relative rounded-2xl overflow-hidden border border-border mb-16"
+          >
+            <video
+              src={heroVideo.url}
+              className="w-full h-auto max-h-[560px] object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background via-background/30 to-transparent" />
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">

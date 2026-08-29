@@ -1,31 +1,15 @@
 import { motion } from "framer-motion";
-import heroVideo from "@/assets/hero-bg.mp4.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
 const HeroSection = () => {
   const { lang } = useLanguage();
   return (
-    <section className="relative h-screen min-h-screen flex items-end justify-center overflow-hidden">
-      {/* Background video */}
-      <div className="absolute inset-0">
-        <video
-          src={heroVideo.url}
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
-        {/* Subtle dark gradient overlay at the bottom for text readability */}
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent" />
-      </div>
-
+    <section className="relative h-screen min-h-screen flex items-end justify-center overflow-hidden bg-background">
       {/* Gradient orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full gradient-purple opacity-20 blur-[100px]" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full gradient-coral opacity-15 blur-[100px]" />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 rounded-full gradient-teal opacity-10 blur-[120px]" />
 
       <div className="relative z-10 container mx-auto px-6 text-center pb-20 md:pb-28">
         <motion.p
