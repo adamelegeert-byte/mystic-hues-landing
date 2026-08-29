@@ -21,6 +21,15 @@ export const ui = {
     rolePlaceholder: { fr: "Rôle à définir", en: "Role TBD" },
     contactForLabel: { fr: "Le contacter pour", en: "Contact for" },
     contactForPlaceholder: { fr: "Description à venir", en: "Description coming soon" },
+    founders: {
+      Martin: {
+        role: { fr: "Media Buying, IA & Contenu", en: "Media Buying, AI & Content" },
+        contactFor: {
+          fr: "Piloter l'acquisition et la lead generation en pharmaceutique et en événementiel, implémenter l'IA dans vos process, et produire les contenus : photo, vidéo, montage. Dix ans de digital, de la stratégie au fichier livré.",
+          en: "Running acquisition and lead generation across pharmaceuticals and events, embedding AI into your processes, and producing the content: photo, video, editing. Ten years in digital, from strategy to delivered file.",
+        },
+      },
+    },
   },
 
   hero: {
@@ -59,8 +68,8 @@ export const ui = {
       {
         title: { fr: "Identité de marque", en: "Brand Identity" },
         description: {
-          fr: "Des systèmes visuels qui disent qui vous êtes en un clin d'œil — logos, typographie, palettes de couleurs et chartes graphiques complètes.",
-          en: "Visual systems that communicate who you are at a glance — logos, typography, color palettes, and complete brand guidelines.",
+          fr: "Des systèmes visuels qui disent qui vous êtes en un clin d'œil : logos, typographie, palettes de couleurs et chartes graphiques complètes.",
+          en: "Visual systems that communicate who you are at a glance: logos, typography, color palettes, and complete brand guidelines.",
         },
       },
     ],
@@ -83,8 +92,8 @@ export const ui = {
     items: [
       {
         quote: {
-          fr: "Ils n'ont pas juste créé du contenu — ils ont bâti tout un univers visuel autour de notre marque. Les ventes ont augmenté de 40 % en trois mois.",
-          en: "They didn't just create content — they built an entire visual universe around our brand. Sales increased 40% in three months.",
+          fr: "Ils n'ont pas juste créé du contenu, ils ont bâti tout un univers visuel autour de notre marque. Les ventes ont augmenté de 40 % en trois mois.",
+          en: "They didn't just create content. They built an entire visual universe around our brand. Sales increased 40% in three months.",
         },
         name: { fr: "Sophie Martin", en: "Sophie Martin" },
         role: { fr: "CEO, Luxe Cosmetics", en: "CEO, Luxe Cosmetics" },

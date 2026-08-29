@@ -73,16 +73,16 @@ export const projects: Project[] = [
       fr: [
         "Plan de communication multi-canal",
         "Stratégie réseaux sociaux (LinkedIn, Instagram, Facebook)",
-        "Segmentation d'audience — 2 cibles (entrepreneurs & gestionnaires PME)",
-        "Mise en place Metricool — reporting & analytics",
+        "Segmentation d'audience : 2 cibles (entrepreneurs & gestionnaires PME)",
+        "Mise en place Metricool : reporting & analytics",
         "Planification de contenu sur 2 phases stratégiques",
         "Stratégie de contenu par plateforme",
       ],
       en: [
         "Multi-channel communication plan",
         "Social media strategy (LinkedIn, Instagram, Facebook)",
-        "Audience segmentation — 2 targets (entrepreneurs & SME managers)",
-        "Metricool setup — reporting & analytics",
+        "Audience segmentation: 2 targets (entrepreneurs & SME managers)",
+        "Metricool setup: reporting & analytics",
         "Content planning over 2 strategic phases",
         "Platform-specific content strategy",
       ],
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   },
   {
     slug: "wip",
-    client: "WIP — Working In Progress",
+    client: "WIP (Working In Progress)",
     title: {
       fr: "Branding & Identité Visuelle Complète",
       en: "Full Branding & Visual Identity",
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     year: "2024",
     deliverables: {
       fr: [
-        "Conception du logo — concept handshake",
+        "Conception du logo : concept handshake",
         "Déclinaisons couleur (4 palettes)",
         "Cartes de visite recto/verso",
         "Papeterie corporate complète",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
         "Charte graphique documentée",
       ],
       en: [
-        "Logo design — handshake concept",
+        "Logo design: handshake concept",
         "Color variations (4 palettes)",
         "Double-sided business cards",
         "Full corporate stationery",
@@ -200,8 +200,8 @@ export const projects: Project[] = [
       en: ["Video Production", "After Movie", "Events"],
     },
     shortDescription: {
-      fr: "Production de l'After Movie pour The Fin Competition — captation et montage dynamique.",
-      en: "After Movie production for The Fin Competition — filming and dynamic editing.",
+      fr: "Production de l'After Movie pour The Fin Competition : captation et montage dynamique.",
+      en: "After Movie production for The Fin Competition: filming and dynamic editing.",
     },
     fullDescription: {
       fr: "Production complète de l'After Movie pour The Fin Competition : captation vidéo intégrale de l'événement, montage dynamique avec étalonnage professionnel et sound design. Deux versions livrées : une version longue pour la diffusion principale et une version courte optimisée pour les réseaux sociaux.",
@@ -213,13 +213,13 @@ export const projects: Project[] = [
     deliverables: {
       fr: [
         "Captation vidéo intégrale de l'événement",
-        "After Movie — version longue (3min+)",
+        "After Movie : version longue (3min+)",
         "Version courte optimisée réseaux sociaux",
         "Étalonnage et sound design",
       ],
       en: [
         "Full event video coverage",
-        "After Movie — long version (3min+)",
+        "After Movie: long version (3min+)",
         "Short version optimized for social media",
         "Color grading and sound design",
       ],
@@ -344,7 +344,7 @@ export const projects: Project[] = [
     year: "2024",
     deliverables: {
       fr: [
-        "Conception du logotype — concept silhouette",
+        "Conception du logotype : concept silhouette",
         "Palettes de couleurs gradient (4 déclinaisons)",
         "Déclinaisons logo multi-fonds",
         "Sélection typographique (Smooth Circulars + Lato)",
@@ -352,7 +352,7 @@ export const projects: Project[] = [
         "Charte graphique documentée",
       ],
       en: [
-        "Logotype design — silhouette concept",
+        "Logotype design: silhouette concept",
         "Gradient color palettes (4 variations)",
         "Logo variations on multiple backgrounds",
         "Typography selection (Smooth Circulars + Lato)",
@@ -398,13 +398,13 @@ export const projects: Project[] = [
         "Reportage photographique (97 photos)",
         "After Movie complet",
         "Reel Halloween",
-        "Clips musicaux — montage",
+        "Clips musicaux : montage",
       ],
       en: [
         "Photo reporting (97 photos)",
         "Full After Movie",
         "Halloween Reel",
-        "Music clips — editing",
+        "Music clips: editing",
       ],
     },
     media: [
