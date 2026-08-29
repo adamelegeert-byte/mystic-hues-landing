@@ -58,48 +58,53 @@ const Nous = () => {
 
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
-            {founderMeta.map((founder, index) => (
-              <motion.article
-                key={founder.key}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative bg-card rounded-2xl p-8 md:p-10 border border-border hover:border-accent/30 transition-all duration-500"
-              >
-                <div
-                  className={`w-24 h-24 rounded-full ${founder.gradient} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 overflow-hidden`}
+            {founderMeta.map((founder, index) => {
+              const profile =
+                ui.about.founders[founder.key as keyof typeof ui.about.founders];
+
+              return (
+                <motion.article
+                  key={founder.key}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="group relative bg-card rounded-2xl p-8 md:p-10 border border-border hover:border-accent/30 transition-all duration-500"
                 >
-                  {founder.image ? (
-                    <img
-                      src={founder.image}
-                      alt={founder.key}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="font-display text-3xl font-extrabold text-accent-foreground">
-                      {founder.key.charAt(0)}
-                    </span>
-                  )}
-                </div>
+                  <div
+                    className={`w-24 h-24 rounded-full ${founder.gradient} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 overflow-hidden`}
+                  >
+                    {founder.image ? (
+                      <img
+                        src={founder.image}
+                        alt={founder.key}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="font-display text-3xl font-extrabold text-accent-foreground">
+                        {founder.key.charAt(0)}
+                      </span>
+                    )}
+                  </div>
 
-                <h2 className="font-display text-2xl font-bold mb-2">{founder.key}</h2>
+                  <h2 className="font-display text-2xl font-bold mb-2">{founder.key}</h2>
 
-                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body font-light mb-6">
-                  {ui.about.rolePlaceholder[lang]}
-                </p>
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-body font-light mb-6">
+                    {profile ? profile.role[lang] : ui.about.rolePlaceholder[lang]}
+                  </p>
 
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-body mb-2">
-                  {ui.about.contactForLabel[lang]}
-                </p>
-                <p className="text-muted-foreground font-body font-light leading-relaxed">
-                  {ui.about.contactForPlaceholder[lang]}
-                </p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-body mb-2">
+                    {ui.about.contactForLabel[lang]}
+                  </p>
+                  <p className="text-muted-foreground font-body font-light leading-relaxed">
+                    {profile ? profile.contactFor[lang] : ui.about.contactForPlaceholder[lang]}
+                  </p>
 
-                <div
-                  className={`absolute inset-0 rounded-2xl ${founder.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
-                />
-              </motion.article>
-            ))}
+                  <div
+                    className={`absolute inset-0 rounded-2xl ${founder.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
+                  />
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </main>
