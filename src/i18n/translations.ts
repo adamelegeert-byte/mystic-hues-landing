@@ -25,8 +25,8 @@ export const ui = {
       Martin: {
         role: { fr: "Media Buying, IA & Contenu", en: "Media Buying, AI & Content" },
         contactFor: {
-          fr: "Piloter l'acquisition et la lead generation en pharmaceutique et en événementiel, implémenter l'IA dans vos process, et produire les contenus : photo, vidéo, montage. Dix ans de digital, de la stratégie au fichier livré.",
-          en: "Running acquisition and lead generation across pharmaceuticals and events, embedding AI into your processes, and producing the content: photo, video, editing. Ten years in digital, from strategy to delivered file.",
+          fr: "Piloter l'acquisition et la lead generation, en pharmaceutique comme en événementiel, implémenter l'IA dans vos process internes, et produire les contenus de bout en bout : photo, vidéo, montage. Dix ans de digital, de la stratégie jusqu'au fichier livré.",
+          en: "Running acquisition and lead generation, in pharmaceuticals as much as in events, embedding AI into your internal processes, and producing the content end to end: photo, video, editing. Ten years in digital, from strategy to delivered file.",
         },
       },
     },
