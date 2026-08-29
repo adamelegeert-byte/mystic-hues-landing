@@ -82,6 +82,55 @@ const ContactSection = () => {
               />
             </div>
           </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-sm font-body text-muted-foreground mb-2">
+                {ui.contact.companyLabel[lang]}
+              </label>
+              <input
+                type="text"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full bg-card border border-border rounded-xl px-5 py-3.5 font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
+                placeholder={ui.contact.companyPlaceholder[lang]}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-body text-muted-foreground mb-2">
+                {ui.contact.phoneLabel[lang]}
+              </label>
+              <input
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="w-full bg-card border border-border rounded-xl px-5 py-3.5 font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
+                placeholder={ui.contact.phonePlaceholder[lang]}
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-body text-muted-foreground mb-2">
+              {ui.contact.serviceLabel[lang]}
+            </label>
+            <div className="relative">
+              <select
+                required
+                value={formData.service}
+                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                className="w-full appearance-none bg-card border border-border rounded-xl px-5 py-3.5 pr-12 font-body text-foreground focus:outline-none focus:border-accent transition-colors cursor-pointer"
+              >
+                <option value="" disabled>
+                  {ui.contact.servicePlaceholder[lang]}
+                </option>
+                {ui.contact.serviceOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option[lang]}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="w-4 h-4 absolute right-5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+            </div>
+          </div>
           <div>
             <label className="block text-sm font-body text-muted-foreground mb-2">
               {ui.contact.messageLabel[lang]}
