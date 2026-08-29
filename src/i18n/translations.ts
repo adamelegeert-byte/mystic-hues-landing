@@ -28,12 +28,12 @@ export const ui = {
           fr: [
             "Dix ans à piloter des budgets média. Des campagnes d'acquisition et de lead generation pour des marques en pharmaceutique et en événementiel, sur des objectifs de vente comme de collecte de contacts. Le coût par résultat se gagne dans le détail : structure de compte, ciblage, arbitrage des budgets, itération sur la créa.",
             "L'IA comme méthode, pas comme gadget. Son implémentation dans vos process internes : tâches répétitives automatisées, production accélérée, décisions appuyées sur la donnée plutôt que sur l'intuition. Ce qui compte, c'est le temps rendu aux équipes et les décisions prises plus vite.",
-            "Et la production derrière la stratégie. Photo, vidéo, montage : Martin réalise lui-même ce qu'il diffuse. De quoi tester vite, ajuster une accroche entre deux vagues, et ne dépendre de personne pour faire vivre une campagne jusqu'au bout.",
+            "Et la production derrière la stratégie. Photo, vidéo, montage : les contenus sont produits en interne, jamais sous-traités. De quoi tester vite, ajuster une accroche entre deux vagues, et ne dépendre de personne pour faire vivre une campagne jusqu'au bout.",
           ],
           en: [
             "Ten years running media budgets. Acquisition and lead generation campaigns for brands in pharmaceuticals and events, built for sales targets as much as for contact collection. Cost per result is won in the details: account structure, targeting, budget arbitration, creative iteration.",
             "AI as a method, not a gadget. Embedded into your internal processes: repetitive tasks automated, production accelerated, decisions grounded in data rather than instinct. What matters is the time given back to your teams and the decisions made faster.",
-            "And the production behind the strategy. Photo, video, editing: Martin shoots and cuts what he runs. Fast to test, quick to adjust a hook between two waves, and never dependent on anyone to keep a campaign running from start to finish.",
+            "And the production behind the strategy. Photo, video, editing: content is made in house, never outsourced. Fast to test, quick to adjust a hook between two waves, and never dependent on anyone to keep a campaign running from start to finish.",
           ],
         },
       },
