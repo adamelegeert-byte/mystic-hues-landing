@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
@@ -50,12 +51,12 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="gradient-warm px-8 py-4 rounded-full text-white font-semibold hover:opacity-90 transition-opacity"
           >
             {ui.hero.ctaPrimary[lang]}
-          </a>
+          </Link>
           <a
             href="#portfolio"
             className="px-8 py-4 rounded-full border border-border text-foreground font-semibold hover:bg-secondary transition-colors"
