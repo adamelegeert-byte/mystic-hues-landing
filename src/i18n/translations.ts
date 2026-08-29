@@ -5,11 +5,24 @@ type Dict = Record<string, { fr: string; en: string }>;
 export const ui = {
   nav: {
     services: { fr: "Services", en: "Services" },
+    about: { fr: "Nous", en: "About Us" },
     portfolio: { fr: "Portfolio", en: "Portfolio" },
     testimonials: { fr: "Témoignages", en: "Testimonials" },
     contact: { fr: "Contact", en: "Contact" },
     cta: { fr: "Commencer", en: "Get Started" },
   },
+  about: {
+    eyebrow: { fr: "Qui sommes-nous", en: "Who we are" },
+    title: { fr: "Les fondateurs", en: "The Founders" },
+    description: {
+      fr: "SKISS est portée par trois fondateurs complémentaires. Voici qui contacter selon votre besoin.",
+      en: "SKISS is driven by three complementary founders. Here's who to contact depending on your needs.",
+    },
+    rolePlaceholder: { fr: "Rôle à définir", en: "Role TBD" },
+    contactForLabel: { fr: "Le contacter pour", en: "Contact for" },
+    contactForPlaceholder: { fr: "Description à venir", en: "Description coming soon" },
+  },
+
   hero: {
     eyebrow: { fr: "Rêvez-le, Dessinez-le, Réalisez-le", en: "Dream It, Design It, Do It" },
     headlineStart: { fr: "On crée des histoires", en: "We Craft Stories" },
