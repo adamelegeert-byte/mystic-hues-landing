@@ -45,12 +45,12 @@ export const ui = {
         contactFor: {
           fr: [
             "Six ans dans les médias, à développer la notoriété et la visibilité de marques, y compris sur des sites à forte audience. Achat d'espace, choix des formats selon la cible et l'objectif : awareness, trafic ou conversion. Une diffusion pensée pour être vue par les bonnes personnes, au bon moment, avec un suivi de performance à chaque étape.",
-            "Certifié AI Foundations (OpenAI), il intègre l'intelligence artificielle à chaque étape utile : recherche de créa, production, optimisation des contenus, automatisation du reporting. Une manière de gagner du temps sur les tâches répétitives, sans jamais sacrifier la qualité du travail rendu.",
+            "À l'aise avec les outils d'intelligence artificielle, génératifs comme conversationnels, il les intègre à chaque étape utile : recherche de créa, production, optimisation des contenus, automatisation du reporting. Une manière de gagner du temps sans jamais sacrifier la qualité du travail rendu.",
             "Motion designer pour différentes marques, à l'aise sur l'ensemble de la suite Adobe : montage vidéo, animation, graphisme. Il conçoit l'identité visuelle de SKISS de bout en bout, du logo aux vidéos jusqu'aux moindres détails d'animation.",
           ],
           en: [
             "Six years in media, building brand awareness and visibility, including on high-traffic sites. Buying space, negotiating with media outlets, and choosing the formats that best fit the target and the goal: awareness, traffic or conversion. Distribution built to reach the right people at the right time, with performance tracked every step of the campaign.",
-            "AI Foundations certified (OpenAI), he brings artificial intelligence into every stage where it earns its place: creative research, production, content optimization, reporting automation. A way to save time on repetitive tasks without ever cutting corners on the work delivered.",
+            "Comfortable with AI tools, generative as well as conversational, he brings them into every stage where they earn their place: creative research, production, content optimization, reporting automation. A way to save time without ever cutting corners on the work delivered.",
             "Motion designer for a range of brands, fluent across the Adobe suite: video editing, animation, graphic design. He shapes SKISS's visual identity from end to end, from the logo to the videos down to the finest animation details.",
           ],
         },
