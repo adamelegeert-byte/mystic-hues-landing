@@ -37,6 +37,24 @@ export const ui = {
           ],
         },
       },
+      Adam: {
+        role: {
+          fr: "Campaign Expert RMB, Graphiste, Vidéaste, Motion Designer & IA",
+          en: "Campaign Expert at RMB, Graphic Designer, Videographer, Motion Designer & AI",
+        },
+        contactFor: {
+          fr: [
+            "Campaign Expert chez RMB (Régie Média Belge), à Bruxelles. Il pilote des dispositifs publicitaires digitaux et BVOD pour certaines des plus grandes marques du pays, entre placement média, structuration des campagnes et suivi de performance.",
+            "Certifié AI Foundations (OpenAI), il intègre l'intelligence artificielle à chaque étape utile : recherche, production, optimisation des contenus. Une manière de gagner du temps sans jamais sacrifier la qualité.",
+            "Graphiste, vidéaste et motion designer de formation, il conçoit l'identité visuelle de SKISS de bout en bout : logo, templates, vidéos, animations. Le regard créatif qui donne forme à ce que Martin et Kahn mettent en place côté stratégie et acquisition.",
+          ],
+          en: [
+            "Campaign Expert at RMB (Régie Média Belge), in Brussels. He runs digital and BVOD advertising campaigns for some of the country's biggest brands, from media placement to campaign structuring and performance tracking.",
+            "AI Foundations certified (OpenAI), he brings artificial intelligence into every stage where it earns its place: research, production, content optimization. A way to move faster without ever cutting corners on quality.",
+            "A trained graphic designer, videographer and motion designer, he shapes SKISS's visual identity from end to end: logo, templates, videos, animations. The creative eye that gives form to what Martin and Kahn build on the strategy and acquisition side.",
+          ],
+        },
+      },
     },
   },
 
