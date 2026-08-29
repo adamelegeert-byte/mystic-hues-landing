@@ -12,10 +12,11 @@ const Navbar = () => {
   const { lang, toggle } = useLanguage();
 
   const navLinks = [
-    { label: ui.nav.services[lang], href: "#services" },
-    { label: ui.nav.portfolio[lang], href: "#portfolio" },
-    { label: ui.nav.testimonials[lang], href: "#testimonials" },
-    { label: ui.nav.contact[lang], href: "#contact" },
+    { label: ui.nav.services[lang], href: "/#services" },
+    { label: ui.nav.about[lang], href: "/nous" },
+    { label: ui.nav.portfolio[lang], href: "/#portfolio" },
+    { label: ui.nav.testimonials[lang], href: "/#testimonials" },
+    { label: ui.nav.contact[lang], href: "/#contact" },
   ];
 
   const LangSwitch = ({ className = "" }: { className?: string }) => (
