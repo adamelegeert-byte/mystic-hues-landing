@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { Send, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
@@ -9,16 +9,20 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { lang } = useLanguage();
-  const [formData, setFormData] = useState({
+  const emptyForm = {
     name: "",
     email: "",
+    company: "",
+    phone: "",
+    service: "",
     message: "",
-  });
+  };
+  const [formData, setFormData] = useState(emptyForm);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success(ui.contact.toast[lang]);
-    setFormData({ name: "", email: "", message: "" });
+    setFormData(emptyForm);
   };
 
   return (
