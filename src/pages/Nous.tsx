@@ -59,7 +59,7 @@ const Nous = () => {
         <div className="absolute top-10 left-0 w-80 h-80 rounded-full gradient-warm opacity-10 blur-[120px]" />
 
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 items-start">
             {founderMeta.map((founder, index) => {
               const profile =
                 ui.about.founders[founder.key as keyof typeof ui.about.founders];
@@ -97,9 +97,15 @@ const Nous = () => {
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70 font-body mb-2">
                   {ui.about.contactForLabel[lang]}
                 </p>
-                <p className="text-muted-foreground font-body font-light leading-relaxed">
-                  {profile ? profile.contactFor[lang] : ui.about.contactForPlaceholder[lang]}
-                </p>
+                <div className="flex flex-col gap-4 text-muted-foreground font-body font-light leading-relaxed">
+                  {profile ? (
+                    profile.contactFor[lang].map((paragraphe) => (
+                      <p key={paragraphe.slice(0, 24)}>{paragraphe}</p>
+                    ))
+                  ) : (
+                    <p>{ui.about.contactForPlaceholder[lang]}</p>
+                  )}
+                </div>
 
                 <div
                   className={`absolute inset-0 rounded-2xl ${founder.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`}
