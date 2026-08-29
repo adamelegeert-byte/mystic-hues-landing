@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroVideo from "@/assets/hero-bg.mp4.asset.json";
+import martinProfile from "@/assets/martin-profile.jpg.asset.json";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 
 const founderMeta = [
-  { key: "Martin", gradient: "gradient-purple", glow: "glow-purple" },
+  { key: "Martin", gradient: "gradient-purple", glow: "glow-purple", image: martinProfile.url },
   { key: "Adam", gradient: "gradient-warm", glow: "glow-coral" },
   { key: "Khan", gradient: "gradient-teal", glow: "glow-teal" },
 ];
