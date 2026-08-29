@@ -21,6 +21,15 @@ export const ui = {
     rolePlaceholder: { fr: "Rôle à définir", en: "Role TBD" },
     contactForLabel: { fr: "Le contacter pour", en: "Contact for" },
     contactForPlaceholder: { fr: "Description à venir", en: "Description coming soon" },
+    founders: {
+      Martin: {
+        role: { fr: "Media Buying, IA & Contenu", en: "Media Buying, AI & Content" },
+        contactFor: {
+          fr: "Piloter l'acquisition et la lead generation — pharmaceutique, événementiel — implémenter l'IA dans vos process, et produire les contenus : photo, vidéo, montage. Dix ans de digital, de la stratégie au fichier livré.",
+          en: "Running acquisition and lead generation — pharmaceuticals, events — embedding AI into your processes, and producing the content: photo, video, editing. Ten years in digital, from strategy to delivered file.",
+        },
+      },
+    },
   },
 
   hero: {
