@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import companyName from "@/assets/company-name.png";
@@ -16,8 +17,31 @@ const Navbar = () => {
     { label: ui.nav.about[lang], href: "/nous" },
     { label: ui.nav.portfolio[lang], href: "/#portfolio" },
     { label: ui.nav.testimonials[lang], href: "/#testimonials" },
-    { label: ui.nav.contact[lang], href: "/#contact" },
+    { label: ui.nav.contact[lang], href: "/contact" },
   ];
+
+  // Les ancres restent des <a> ; les routes passent par Link pour éviter un
+  // rechargement complet, qui réinitialiserait la langue choisie.
+  const NavItem = ({
+    href,
+    className,
+    onClick,
+    children,
+  }: {
+    href: string;
+    className?: string;
+    onClick?: () => void;
+    children: React.ReactNode;
+  }) =>
+    href.includes("#") ? (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    ) : (
+      <Link to={href} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    );
 
   const LangSwitch = ({ className = "" }: { className?: string }) => (
     <button
@@ -40,28 +64,28 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass" : "bg-transparent border-transparent"}`}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="Company logo" className="h-9 w-auto" />
           <img src={companyName} alt="Company name" className="h-5 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <NavItem
               key={link.label}
               href={link.href}
               className="text-sm font-body font-medium tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               {link.label}
-            </a>
+            </NavItem>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="gradient-purple px-5 py-2.5 rounded-full text-sm font-semibold text-accent-foreground hover:opacity-90 transition-opacity"
           >
             {ui.nav.cta[lang]}
-          </a>
+          </Link>
           <LangSwitch />
         </div>
 
@@ -85,22 +109,22 @@ const Navbar = () => {
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <NavItem
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="text-lg font-body font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
-                </a>
+                </NavItem>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setIsOpen(false)}
                 className="gradient-purple px-5 py-3 rounded-full text-center text-sm font-semibold text-accent-foreground mt-2"
               >
                 {ui.nav.cta[lang]}
-              </a>
+              </Link>
               <div className="pt-2 flex justify-center">
                 <LangSwitch />
               </div>
