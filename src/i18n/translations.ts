@@ -181,7 +181,7 @@ export const ui = {
     portfolio: { fr: "Portfolio", en: "Portfolio" },
     testimonials: { fr: "Témoignages", en: "Testimonials" },
     contact: { fr: "Contact", en: "Contact" },
-    rights: { fr: "© 2025 Créative. Tous droits réservés.", en: "© 2025 Créative. All rights reserved." },
+    rights: { fr: "SKISS. Tous droits réservés.", en: "SKISS. All rights reserved." },
   },
   project: {
     notFound: { fr: "Projet introuvable", en: "Project not found" },

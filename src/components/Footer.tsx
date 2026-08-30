@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
+import logo from "@/assets/logo.png";
+import companyName from "@/assets/company-name.png";
 
 const Footer = () => {
   const { lang } = useLanguage();
@@ -14,8 +16,9 @@ const Footer = () => {
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
-            CRÉA<span className="text-gradient-purple">TIVE</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Logo SKISS" className="h-8 w-auto" />
+            <img src={companyName} alt="SKISS" className="h-4 w-auto" />
           </Link>
 
           <div className="flex items-center gap-8">
@@ -31,7 +34,7 @@ const Footer = () => {
           </div>
 
           <p className="text-sm text-muted-foreground font-body">
-            {ui.footer.rights[lang]}
+            © {new Date().getFullYear()} {ui.footer.rights[lang]}
           </p>
         </div>
       </div>
