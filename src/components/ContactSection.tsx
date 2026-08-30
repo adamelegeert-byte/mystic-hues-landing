@@ -4,6 +4,7 @@ import { Send, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
+import { enregistrerLead } from "@/lib/supabase";
 
 const ContactSection = () => {
   const ref = useRef(null);
