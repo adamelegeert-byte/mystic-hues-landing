@@ -169,7 +169,12 @@ export const ui = {
     messageLabel: { fr: "Message", en: "Message" },
     messagePlaceholder: { fr: "Parlez-nous de votre projet...", en: "Tell us about your project..." },
     submit: { fr: "Envoyer le message", en: "Send Message" },
+    submitting: { fr: "Envoi en cours...", en: "Sending..." },
     toast: { fr: "Message envoyé ! Nous vous répondons rapidement.", en: "Message sent! We'll get back to you shortly." },
+    toastError: {
+      fr: "L'envoi a échoué. Réessayez, ou écrivez-nous directement par email.",
+      en: "Sending failed. Please try again, or email us directly.",
+    },
   },
   footer: {
     services: { fr: "Services", en: "Services" },
