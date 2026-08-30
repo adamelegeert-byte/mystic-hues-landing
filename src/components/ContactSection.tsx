@@ -19,9 +19,22 @@ const ContactSection = () => {
     message: "",
   };
   const [formData, setFormData] = useState(emptyForm);
+  const [envoiEnCours, setEnvoiEnCours] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (envoiEnCours) return;
+
+    setEnvoiEnCours(true);
+    const { error } = await enregistrerLead(formData);
+    setEnvoiEnCours(false);
+
+    if (error) {
+      console.error("Enregistrement du lead impossible :", error);
+      toast.error(ui.contact.toastError[lang]);
+      return;
+    }
+
     toast.success(ui.contact.toast[lang]);
     setFormData(emptyForm);
   };
@@ -148,9 +161,10 @@ const ContactSection = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="gradient-purple px-10 py-4 rounded-full text-accent-foreground font-medium hover:opacity-90 transition-opacity glow-purple inline-flex items-center gap-2"
+              disabled={envoiEnCours}
+              className="gradient-purple px-10 py-4 rounded-full text-accent-foreground font-medium hover:opacity-90 transition-opacity glow-purple inline-flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {ui.contact.submit[lang]}
+              {envoiEnCours ? ui.contact.submitting[lang] : ui.contact.submit[lang]}
               <Send className="w-4 h-4" />
             </button>
           </div>
