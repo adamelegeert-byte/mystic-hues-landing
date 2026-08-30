@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
+import { pousserEvenement } from "@/lib/analytics";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { ui } from "@/i18n/translations";
 import { enregistrerLead } from "@/lib/supabase";
@@ -35,6 +36,7 @@ const ContactSection = () => {
       return;
     }
 
+    pousserEvenement("generate_lead", { service: formData.service });
     toast.success(ui.contact.toast[lang]);
     setFormData(emptyForm);
   };
