@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import ProjectPage from "./pages/projets/ProjectPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import SuiviPages from "./components/SuiviPages";
 import { LanguageProvider } from "./i18n/LanguageContext";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <LanguageProvider>
         <BrowserRouter>
           <ScrollToTop />
+          <SuiviPages />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/nous" element={<Nous />} />
